@@ -1,118 +1,173 @@
-# Stellar Notes DApp
+# Stellar Student DApp
 
-**Stellar Notes DApp** - Blockchain-Based Decentralized Note-Taking System
+Stellar Student DApp – Blockchain Based Student Data Management System
+
+---
 
 ## Project Description
 
-Stellar Notes DApp is a decentralized smart contract solution built on the Stellar blockchain using Soroban SDK. It provides a secure, immutable platform for managing personal notes directly on the blockchain. The contract ensures that your data is stored transparently and is only manageable through predefined smart contract functions, eliminating reliance on centralized database providers.
+Stellar Student DApp is a decentralized smart contract solution built on the Stellar blockchain using Soroban SDK.
+This project provides a secure and transparent platform for storing and managing student data directly on-chain.
 
-The system allows users to create, view, and delete notes, leveraging the efficiency and security of the Stellar network. Each note is uniquely identified and stored within the contract's instance storage, ensuring data persistence and reliability.
+The smart contract allows users to create, view, update, and delete student records using predefined contract functions.
+All student information is stored in the contract storage, ensuring data persistence, integrity, and decentralization without relying on centralized databases.
+
+Each student record is uniquely identified and permanently stored on the blockchain, providing reliability and security.
+
+---
 
 ## Project Vision
 
-Our vision is to revolutionize personal productivity in the digital age by:
+Our vision is to demonstrate how blockchain technology can be used for secure academic data management by:
 
-- **Decentralizing Data**: Moving note-taking from centralized servers to a global, distributed blockchain
-- **Ensuring Ownership**: Empowering users to have complete control and ownership over their digital thoughts and information
-- **Guaranteeing Immutability**: Providing a permanent, tamper-proof record of notes that cannot be altered or deleted by third parties
-- **Enhancing Privacy**: Leveraging blockchain security to protect personal information from unauthorized access
-- **Building Trustless Systems**: Creating a platform where data integrity is guaranteed by code, not by company promises
+* Decentralizing Data Storage — moving student records to a distributed blockchain network
+* Ensuring Ownership — data cannot be modified without contract interaction
+* Guaranteeing Integrity — records stored on-chain cannot be tampered with
+* Enhancing Security — blockchain cryptography protects stored information
+* Building Trustless Systems — no central authority required
 
-We envision a future where digital information is truly personal and sovereign, empowering individuals with complete autonomy over their digital assets.
+This project shows how decentralized applications can be used in education systems.
+
+---
 
 ## Key Features
 
-### 1. **Simple Note Creation**
+### 1. Student Creation
 
-- Create notes with just one function call
-- Specify title and content for each note
-- Automated ID generation for unique identification
-- Persistent storage on the Stellar blockchain
+* Add new student data using smart contract
+* Automatic ID generation
+* Store name and major
+* Persistent blockchain storage
 
-### 2. **Efficient Data Retrieval**
+### 2. Data Retrieval
 
-- Fetch all stored notes in a single call
-- Structured data representation for easy frontend integration
-- Quick access to your entire note collection
-- Real-time synchronization with the blockchain state
+* Fetch all stored students
+* Fast access from contract storage
+* Structured data format
+* Ready for frontend integration
 
-### 3. **Secure Deletion**
+### 3. Update Student
 
-- Remove specific notes using their unique IDs
-- Permanent removal from the contract storage
-- Clean and efficient storage management
-- Immediate update of the note list after deletion
+* Modify student name or major
+* Update using student ID
+* Changes stored permanently on-chain
 
-### 4. **Transparency and Security**
+### 4. Delete Student
 
-- View all note activities on the blockchain
-- Blockchain-based verification of all storage actions
-- Immutable records of note creation and deletion
-- Protected against unauthorized modifications
+* Remove student by ID
+* Immediate update of storage
+* Clean data management
 
-### 5. **Stellar Network Integration**
+### 5. Blockchain Security
 
-- Leverages the high speed and low cost of Stellar
-- Built using the modern Soroban Smart Contract SDK
-- Scalable architecture for growing note collections
-- Interoperable with other Stellar-based services
+* Data stored on Stellar blockchain
+* Immutable transaction history
+* Safe smart contract execution
+* No centralized database
+
+### 6. Soroban Smart Contract
+
+* Built using Rust
+* Uses soroban_sdk
+* Uses contract storage
+* Uses Vec and Symbol keys
+
+---
 
 ## Contract Details
 
-- Contract Address: CBLU4IUASQ4WUMOXBFLZRSBBLILGOH33GS4LUPKFBCCCMJCDQNMF7G2M
-  ![alt text](screenshot.png)
+Contract Address:
+
+```
+PUT_YOUR_CONTRACT_ID_HERE
+```
+
+Example:
+
+```
+CBUXXXXXXXXXXXXXXXXXXXXXXXXXXXX
+```
+
+You can get the contract ID after deploy:
+
+```
+stellar contract deploy
+```
+
+Screenshot:
+
+![Contract](screenshots/contract.png)
+
+---
 
 ## Future Scope
 
-### Short-Term Enhancements
+### Short-Term Improvements
 
-1. **Note Encryption**: Support for end-to-end encryption of note content for enhanced privacy
-2. **Category Management**: Add tags and categories to organize notes efficiently
-3. **Rich Text Support**: Extend support beyond plain text to include Markdown and formatted content
-4. **Search Functionality**: Implement advanced search filters for large note collections
+1. Add student age field
+2. Add GPA field
+3. Add search function
+4. Add pagination
 
 ### Medium-Term Development
 
-5. **Collaborative Notes**: Implement multi-signature requirements for shared or collaborative note-taking
-   - Shared access for multiple addresses
-   - Permission-based editing and viewing
-   - Version history tracking
-6. **Notification System**: Off-chain bridge to alert users of new updates or shared notes
-7. **Asset Attachment**: Capability to attach digital assets or tokens to specific notes
-8. **Inter-Contract Integration**: Allow other smart contracts to interact with and store data in the notes contract
+5. Frontend integration
+6. Wallet authentication
+7. Multi-user interaction
+8. Event logging
 
 ### Long-Term Vision
 
-9. **Cross-Chain Synchronization**: Extend note storage to multiple blockchain networks
-10. **Decentralized UI Hosting**: Host the frontend on IPFS or similar decentralized platforms
-11. **AI-Powered Summarization**: Optional integration with AI to help users summarize their notes
-12. **Privacy Layers**: Implement zero-knowledge proofs for completely private note content
-13. **DAO Governance**: Community-driven protocol improvements and feature prioritization
-14. **Identity Management**: Integration with decentralized identity (DID) systems for user management
+9. Full academic record system
+10. Multi-contract integration
+11. Cross-chain storage
+12. Decentralized identity support
+13. NFT certificate storage
+14. DAO-based management
 
 ### Enterprise Features
 
-15. **Corporate Documentation**: Adapt the system for secure corporate record-keeping
-16. **Immutable Logging**: Create time-locked logs for audit purposes
-17. **Automated Reporting**: Automatic note triggers for periodic reporting
-18. **Multi-Language Support**: Expand accessibility with internationalization
+15. University record system
+16. Audit logging
+17. Access permissions
+18. Multi-language support
 
 ---
 
 ## Technical Requirements
 
-- Soroban SDK
-- Rust programming language
-- Stellar blockchain network
-
-## Getting Started
-
-Deploy the smart contract to Stellar's Soroban network and interact with it using the three main functions:
-
-- `create_note()` - Create a new note with a title and content
-- `get_notes()` - Retrieve all stored notes from the contract
-- `delete_note()` - Remove a specific note by its ID
+* Rust
+* Soroban SDK
+* Stellar CLI
+* Stellar Network
+* Smart Contract Storage
 
 ---
 
-**Stellar Notes DApp** - Securing Your Thoughts on the Blockchain
+## Getting Started
+
+Build contract
+
+```
+cargo build
+```
+
+Deploy contract
+
+```
+stellar contract deploy
+```
+
+Invoke functions
+
+```
+create_student
+get_students
+update_student
+delete_student
+```
+
+
+---
+
+Stellar Student DApp — Secure Student Data on Blockchain
